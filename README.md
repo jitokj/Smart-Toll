@@ -1,3 +1,5 @@
 # SmartToll
 
 A blockchain-based Tollbooth Management System
+
+The Indian Govt. permits the contractor who has won the contract for building highways to setup toll booths on the highway once construction is completed, and collect toll from vehicles using the particular stretch of highway, for a designated period of time. There is currently no check in place to enforce this time limit, and often, there are contractors who keep illegally collecting toll many years after their contract has expired. The proposed solution is a blockchain network created with the time period set by the Govt., there will be no further transactions permitted on the network once the contract expires. The users (vehicle owners\drivers) who frequent the highway are able to purchase tokens in advance (prepaid) and the toll amount is deducted from their balance when they pass through the toll booths. The contractor is allowed to withdraw limited amounts from the toll collected, and once the contract expires, they can withdraw the entire remaining amount.
