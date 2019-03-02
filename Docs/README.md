@@ -4,6 +4,33 @@ A blockchain-based Tollbooth Management System
 
 The Indian Govt. permits the contractor who has won the contract for building highways to setup toll booths on the highway once construction is completed, and collect toll from vehicles using the particular stretch of highway, for a designated period of time. There is currently no check in place to enforce this time limit, and often, there are contractors who keep illegally collecting toll many years after their contract has expired. The proposed solution is a blockchain network created with the time period set by the Govt., there will be no further transactions permitted on the network once the contract expires. The users (vehicle owners\drivers) who frequent the highway are able to purchase tokens in advance (prepaid) and the toll amount is deducted from their balance when they pass through the toll booths. The contractor is allowed to withdraw limited amounts from the toll collected, and once the contract expires, they can withdraw the entire remaining amount.
 
+**System requirements:**
+
+1. Operating system: Ubuntu 16.04
+2. System RAM: 4 GB or above (recommended 8 GB)
+3. Free System storage: 4 GB on /home
+
+**Installation prequisites:**
+
+1. Ensure that NodeJS is installed in the system. For more information about NodeJS, go to https://nodejs.org. To check if installed, open a terminal window:
+   $ node -v
+2. If NodeJS is not installed, go to https://nodejs.org and download the compatible version based on system OS, or in a terminal window:
+   $ sudo apt-get install -y nodejs
+3. Ensure that Truffle is installed. Truffle Suite helps to develop Dapps easily. For more information, go to https://truffleframework.com/. To check if installed, in terminal window:
+   $ truffle version
+4. If Truffle is not installed, in terminal window:
+   $ npm install -g truffle
+5. Ensure that ganache-cli is installed. Ganache CLI is the latest version of TestRPC: a fast and customizable blockchain emulator.
+   $ npm install -g ganache-cli
+6. Ensure that geth is installed. Geth is the official Golang implementation of the Ethereum protocol. To check, in a terminal window:
+   $ geth version
+7. To install geth, in a terminal window:
+   $ sudo apt-get install software-properties-common
+   $ sudo add-apt-repository -y ppa:ethereum/ethereum
+   $ sudo apt-get update
+   $ sudo apt-get install ethereum
+8. Ensure that Go and C compilers are installed. In a terminal window:
+   $ sudo apt-get install -y build-essential
 
 **Installation/Set-up instructions (ganache):**
 
@@ -44,7 +71,7 @@ The Indian Govt. permits the contractor who has won the contract for building hi
    $ npm start
 10. Open a browser window. Go to https://localhost:3000
 11. Copy individual addresses from 'Geth Account Details.txt' file and use the Dapp features.
-12. Unlock respective accounts in geth console window using passwords given in the text file, when using 'Buy Tokens', 'Pay Toll', 'Withdraw Tokens' functions.
+12. Unlock respective accounts (giving the account details like in below example) in geth console window using passwords given in the text file, when using 'Buy Tokens', 'Pay Toll', 'Withdraw Tokens' functions.
    $ personal.unlockAccount(eth.accounts[1])
 13. To exit the project, stop the mining process in geth console window. Then give CTRL+C in other terminal windows to exit.
    $ miner.stop()

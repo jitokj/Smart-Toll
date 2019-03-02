@@ -7,19 +7,19 @@ const Web3 = require('web3');
 if (typeof web3 !== 'undefined') {
   const web3 = new Web3(web3.currentProvider);
 } else {
-  //uncomment below line for ganache deployment
-  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-  //uncomment below line for geth deployment
-  // web3 = new Web3(new Web3.providers.IpcProvider("~/.ethereum/geth.ipc"));
-  //uncomment below line for Rinkeby deployment
-  // const web3 = new Web3(new Web3.providers.WebsocketProvider("https://rinkeby.infura.io/v3/b51a1541916d4e3ab9d301ebd1bf7f29"));
-	// web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/b51a1541916d4e3ab9d301ebd1bf7f29"));
+//uncomment below line for ganache deployment
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+ 
+//uncomment below line for Rinkeby deployment
+// const web3 = new Web3(new Web3.providers.WebsocketProvider("https://rinkeby.infura.io/v3/b51a1541916d4e3ab9d301ebd1bf7f29"));
+// web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/b51a1541916d4e3ab9d301ebd1bf7f29"));
 }
 //============================================================
-// place your contract address, abi and deployer address below....
+// place your contract address, abi below....
 // contractAddress needs to be replaced after each deployment.
 // abi needs to be replaced if contracts have been modified since last deployment.
-// deployer address needs to be hard-coded below (commented) if deployment not done in truffle.
+
 const contractAddress = "0x23D6Cdb076a380b2E11bb25Fc4C9Dc8B00042f8b";
 const abi = [
   {
@@ -410,8 +410,8 @@ const abi = [
 ];
 var demoContract = new web3.eth.Contract(abi, contractAddress);
 console.log('Server started, please open http://localhost:3000 in your browser!');
-// if not using truffle to compile, hard-code deployer address below from Remix
-// const deployerAddress = '0xb40b2584bf65137e32971f32a98705db78339008';
+
+
 //Setting deployer address using truffle compile, for ganache and geth deployments.
 var deployerAddress
 web3.eth.getAccounts().then(e => {
