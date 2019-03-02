@@ -41,16 +41,15 @@ The Indian Govt. permits the contractor who has won the contract for building hi
    $ ganache-cli
 4. Back in original terminal window, run truffle migrate.
    $ truffle migrate --reset
-5. If there are changes in contract (contracts are compiled), copy ABI from Buy.json and replace in index.js file (line 24). Save file.
-6. Copy deployed contract address (of Buy) from truffle migrate window and replace in index.js file (line 23). Save file.
-7. In original terminal window, start server.
+5. Copy deployed contract address (of Buy) from truffle migrate window and replace in index.js file (line 22). Save file.
+6. In original terminal window, start server.
    $ npm start
-8. Open a browser window. Go to https://localhost:3000
-9. Copy individual addresses from ganache terminal and use the Dapp features.
-10. For testing, open a terminal window, run test.
+7. Open a browser window. Go to https://localhost:3000
+8. Copy individual addresses from ganache terminal and use the Dapp features.
+9. For testing, open a terminal window, run test.
    $ npm test
-11. The contract is set to expire in 6 minutes, if more time is needed to test the functionalities, change this in payToll function (line 60) and withdrawToken function (line 97).
-12. Use CTRL+C to exit the project from respective terminal windows.
+10. The contract is set to expire in 6 minutes, if more time is needed to test the functionalities, change this in payToll function (line 60) and withdrawToken function (line 97).
+11. Use CTRL+C to exit the project from respective terminal windows.
 
 **Installation/Set-up instructions (geth):**
 
@@ -65,17 +64,16 @@ The Indian Govt. permits the contractor who has won the contract for building hi
    $ miner.start()
 6. Back in original terminal window, run truffle migrate.
    $ truffle migrate --reset
-7. If there are changes in contract (contracts are compiled), copy ABI from Buy.json and replace in index.js file (line 24). Save file.
-8. Copy deployed contract address (of Buy) from truffle migrate window and replace in index.js file (line 23). Save file.
-9. In original terminal window, start server.
+7. Copy deployed contract address (of Buy) from truffle migrate window and replace in index.js file (line 22). Save file.
+8. In original terminal window, start server.
    $ npm start
-10. Open a browser window. Go to https://localhost:3000
-11. Copy individual addresses from 'Geth Account Details.txt' file and use the Dapp features.
-12. Unlock respective accounts (giving the account details like in below example) in geth console window using passwords given in the text file, when using 'Buy Tokens', 'Pay Toll', 'Withdraw Tokens' functions.
+9. Open a browser window. Go to https://localhost:3000
+10. Copy individual addresses from 'Geth Account Details.txt' file and use the Dapp features.
+11. Unlock respective accounts (giving the account details like in below example) in geth console window using passwords given in the text file, when using 'Buy Tokens', 'Pay Toll', 'Withdraw Tokens' functions.
    $ personal.unlockAccount(eth.accounts[1])
-13. To exit the project, stop the mining process in geth console window. Then give CTRL+C in other terminal windows to exit.
+12. To exit the project, stop the mining process in geth console window. Then give CTRL+C in other terminal windows to exit.
    $ miner.stop()
-14. The contract is set to expire in 6 minutes, if more time is needed to test the functionalities, change this in payToll function (line 60) and withdrawToken function (line 97).
+13. The contract is set to expire in 6 minutes, if more time is needed to test the functionalities, change this in payToll function (line 60) and withdrawToken function (line 97).
 
 **Contract conditions:**
 
