@@ -36,7 +36,7 @@ The Indian Govt. permits the contractor who has won the contract for building hi
 
 1. Open the Dapp project folder in VS Code.
 2. Open a terminal window in the project folder.
-   $ npm install //(not required since node modules are provided)
+   $ npm rebuild //(to resolve node version incompatibility issues)
 3. Open another terminal window. Run ganache-cli.
    $ ganache-cli
 4. Back in original terminal window, run truffle migrate.
@@ -55,7 +55,7 @@ The Indian Govt. permits the contractor who has won the contract for building hi
 
 1. Open the Dapp project folder in VS Code. Comment ganache deployment details in truffle-config.js and uncomment geth deployment details. Save file.
 2. Open a terminal window in the project folder.
-   $ npm install //(not required since node modules are provided)
+   $ npm rebuild //(to resolve node version incompatibility issues)
 3. Open another terminal window inside geth folder (BlockchainData).
    $ geth --identity "miner" --networkid 4002 --datadir ownerAccount --nodiscover --mine --rpc --rpcport "8545" --port "8191" --unlock 0 --password password.txt --ipcpath "~/.ethereum/geth.ipc" --rpccorsdomain "*" --rpcapi "db,eth,net,web3,personal"
 4. Open another terminal window inside geth folder (BlockchainData). Open geth console.

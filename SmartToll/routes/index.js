@@ -19,7 +19,7 @@ web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 // place your contract address....
 // contractAddress needs to be replaced after each deployment.
 
-const contractAddress = "0x23D6Cdb076a380b2E11bb25Fc4C9Dc8B00042f8b";
+const contractAddress = "0x2F98C067356c7EE6c6FAc77fAf26341b96c98f95";
 
 var demoContract = new web3.eth.Contract(abi, contractAddress);
 console.log('Server started, please open http://localhost:3000 in your browser!');
@@ -38,78 +38,117 @@ router.get('/', function (req, res, next) {
   res.render('index');
 });
 // to call registerContractor function
-router.post('/conReg', function (req, res, next) {
-	var contractorAddress = req.body.contractAdd
-	demoContract.methods.registerContractor(contractorAddress).send({ from: deployerAddress, gas: 150000 }).then(function (value) {
-  console.log('Registered contractor: ' + value.transactionHash);
-  console.log(value);
-	res.send("The contractor:" + contractorAddress + " has been registered! Transaction Hash: " + value.transactionHash);
-  });
+router.post('/conReg', async function (req, res, next) {
+  var contractorAddress = req.body.contractAdd
+  try {
+    await demoContract.methods.registerContractor(contractorAddress).send({ from: deployerAddress, gas: 150000 }).then(function (value) {
+      console.log('Registered contractor: ' + value.transactionHash);
+      console.log(value);
+      res.send("The contractor:" + contractorAddress + " has been registered! Transaction Hash: " + value.transactionHash);
+    });
+  } catch(err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 
 // to call registerUser function
-router.post('/userReg', function (req, res, next) {
+router.post('/userReg', async function (req, res, next) {
 	var userAddress = req.body.add1
-	var vehNum = req.body.vnum
-  demoContract.methods.registerUser(userAddress, vehNum).send({ from: deployerAddress, gas: 150000 }).then(function (value) {
-  console.log('Registered user: ' + value.transactionHash);
-  console.log(value);
-  res.send("The user:" + userAddress + " has been registered! Transaction Hash: " + value.transactionHash);
-  });
+  var vehNum = req.body.vnum
+  try {
+    await demoContract.methods.registerUser(userAddress, vehNum).send({ from: deployerAddress, gas: 150000 }).then(function (value) {
+      console.log('Registered user: ' + value.transactionHash);
+      console.log(value);
+      res.send("The user:" + userAddress + " has been registered! Transaction Hash: " + value.transactionHash);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call balanceOf function
-router.post('/accBal', function (req, res, next) {
-	var Balance = req.body.userBalAdd
-  demoContract.methods.balanceOf(Balance).call().then(function (value1) {
-  console.log('Account Balance: ' + value1);
-  console.log(value1);
-  res.send("Account balance of " + Balance + " is: "+ value1);
-  });
+router.post('/accBal', async function (req, res, next) {
+  var Balance = req.body.userBalAdd
+  try {
+    await demoContract.methods.balanceOf(Balance).call().then(function (value1) {
+      console.log('Account Balance: ' + value1);
+      console.log(value1);
+      res.send("Account balance of " + Balance + " is: "+ value1);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call viewHistory function (toll payment receipts)
-router.post('/viewHistory', function (req, res, next) {
-	var userAddress = req.body.userAdd2
-  demoContract.methods.viewHistory(userAddress).call().then(function (value1) {
-	console.log('Toll history: ' + value1);
-  res.send("Toll History: "+ value1);
-  });
+router.post('/viewHistory', async function (req, res, next) {
+  var userAddress = req.body.userAdd2
+  try {
+    await demoContract.methods.viewHistory(userAddress).call().then(function (value1) {
+      console.log('Toll history: ' + value1);
+      res.send("Toll History: "+ value1);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call viewUsers function (registered user details)
-router.post('/viewUser', function (req, res, next) {
-	var userAddress = req.body.regUsers
-  demoContract.methods.viewUsers(userAddress).call().then(function (value2) {
-	console.log('User Details:\nUser: ' + value2[0] + '\nVehicle Number: ' + value2[1] + '\n' +'User Balance: ' + value2[2]);
-  res.send("User: " +value2['0'] + "\n" +"Vehicle Number: "+ value2['1'] + "\n" + "User Balance: " + value2['2']);
-  });
+router.post('/viewUser', async function (req, res, next) {
+  var userAddress = req.body.regUsers
+  try {
+    await demoContract.methods.viewUsers(userAddress).call().then(function (value2) {
+      console.log('User Details:\nUser: ' + value2[0] + '\nVehicle Number: ' + value2[1] + '\n' +'User Balance: ' + value2[2]);
+      res.send("User: " +value2['0'] + "\n" +"Vehicle Number: "+ value2['1'] + "\n" + "User Balance: " + value2['2']);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call payToll function
 router.post('/payToll', async function (req, res, next) {
   var userAddress = req.body.userAdd
   var etherValue = 0;
-  await demoContract.methods.payToll(userAddress).send({ from: userAddress, gas: 150000, value: etherValue }).then(function (value) {
-	console.log('Toll Payment: ' + value.transactionHash);
-  res.send("The user: " + userAddress + " has paid Toll! Transaction Hash: " + value.transactionHash);
-  });
+  try {
+    await demoContract.methods.payToll(userAddress).send({ from: userAddress, gas: 150000, value: etherValue }).then(function (value) {
+      console.log('Toll Payment: ' + value.transactionHash);
+      res.send("The user: " + userAddress + " has paid Toll! Transaction Hash: " + value.transactionHash);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call withdrawToken function
 router.post('/withdrawTokens', async function (req, res, next) {
 	var toWithdraw = req.body.withdrawCount
 	var callingAddress = req.body.contractWithdraw
-	//need to change the above from address by adding input address and replacing below also
-  await demoContract.methods.withdrawToken(toWithdraw).send({ from: callingAddress, gas: 150000 }).then(function (value) {
-	console.log('Token Withdraw: ' + value.transactionHash);
-  res.send("The contractor:" + callingAddress + " has withdrawn " +toWithdraw+ " Tokens! Transaction Hash: " + value.transactionHash);
-  });
+	try {
+    await demoContract.methods.withdrawToken(toWithdraw).send({ from: callingAddress, gas: 150000 }).then(function (value) {
+      console.log('Token Withdraw: ' + value.transactionHash);
+      res.send("The contractor:" + callingAddress + " has withdrawn " +toWithdraw+ " Tokens! Transaction Hash: " + value.transactionHash);
+    });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 // to call buyTokens function
 router.post('/buyTokens', async function (req, res, next) {
 	var userAddress = req.body.userAdd1
   var reqTokens = req.body.tokenCount1
   var etherValue = (reqTokens * 0.01);
-  await demoContract.methods.buyTokens(userAddress, reqTokens).send({ from: userAddress, gas: 150000, value: web3.utils.toWei(etherValue.toString(), 'ether') }).then(function (value) {
-	console.log('Token Purchase: ' + value.transactionHash);
-  res.send("The user: " + userAddress + " has bought "+ reqTokens +" tokens! Transaction Hash: " + value.transactionHash);
-  });
+  try {
+    await demoContract.methods.buyTokens(userAddress, reqTokens).send({ from: userAddress, gas: 150000, value: web3.utils.toWei(etherValue.toString(), 'ether') }).then(function (value) {
+      console.log('Token Purchase: ' + value.transactionHash);
+      res.send("The user: " + userAddress + " has bought "+ reqTokens +" tokens! Transaction Hash: " + value.transactionHash);
+      });
+  } catch (err) {
+    await res.send(err.message);
+    console.log(err.message);
+  }
 });
 
 module.exports = router;

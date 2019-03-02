@@ -22,14 +22,14 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060326001819055504260028190555060e98061006e6000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820267f7e6509371b938ace840fe26c30f5f1fb639cd3f0fe538c778d6e0f7376b80029",
-  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820267f7e6509371b938ace840fe26c30f5f1fb639cd3f0fe538c778d6e0f7376b80029",
-  "sourceMap": "156:503:3:-;;;370:101;8:9:-1;5:2;;;30:1;27;20:12;5:2;370:101:3;405:10;397:5;;:18;;;;;;;;;;;;;;;;;;434:2;421:10;:15;;;;458:3;442:13;:19;;;;156:503;;;;;;",
-  "deployedSourceMap": "156:503:3:-;;;;;;;;;;;;;;;;;;;;;;;;177:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;177:28:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n/**\n * @title Ownable\n * @dev The Ownable contract has an owner address, and provides basic authorization control\n * functions.\n */\ncontract Ownable {\n  address payable public owner;\n  uint tollAmount;\n  uint256 contractStart;\n  /**\n   * @dev The Ownable constructor sets the original `owner` of the contract to the sender\n   * account.\n   */\n   constructor() public {\n    owner = msg.sender;\n    tollAmount = 50;\n    contractStart = now;\n    \n  }\n  /**\n   * @dev Throws if called by any account other than the owner.\n   */\n  modifier onlyOwner() {\n    require(msg.sender == owner, \"Only owner can access this function!\");\n    _;\n  }\n}\n",
-  "sourcePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/feb 28/SmartToll (backup iFrame Dapp tested)/contracts/Ownable.sol",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060326001819055504260028190555060e98061006e6000396000f3fe608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582056294fa52007de81de19536fe0af31463d88d99c78c53c49370c50da2564ed410029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b146044575b600080fd5b348015604f57600080fd5b5060566098565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a7230582056294fa52007de81de19536fe0af31463d88d99c78c53c49370c50da2564ed410029",
+  "sourceMap": "156:598:3:-;;;465:101;8:9:-1;5:2;;;30:1;27;20:12;5:2;465:101:3;500:10;492:5;;:18;;;;;;;;;;;;;;;;;;529:2;516:10;:15;;;;553:3;537:13;:19;;;;156:598;;;;;;",
+  "deployedSourceMap": "156:598:3:-;;;;;;;;;;;;;;;;;;;;;;;;177:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;177:28:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n/**\n * @title Ownable\n * @dev The Ownable contract has an owner address, and provides basic authorization control\n * functions.\n */\ncontract Ownable {\n  address payable public owner;\n  uint tollAmount;\n  uint256 contractStart;\n  /**\n   * @dev The Ownable constructor sets the original `owner` of the contract to the sender account.\n   * The toll amount is set as 50 tokens, and the contract start time is set as time of deployment.\n   */\n   constructor() public {\n    owner = msg.sender;\n    tollAmount = 50;\n    contractStart = now;\n    \n  }\n  /**\n   * @dev Throws if called by any account other than the owner.\n   */\n  modifier onlyOwner() {\n    require(msg.sender == owner, \"Only owner can access this function!\");\n    _;\n  }\n}\n",
+  "sourcePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/mar 1/smarttoll/SmartToll/contracts/Ownable.sol",
   "ast": {
-    "absolutePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/feb 28/SmartToll (backup iFrame Dapp tested)/contracts/Ownable.sol",
+    "absolutePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/mar 1/smarttoll/SmartToll/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         1008
@@ -145,7 +145,7 @@
             "body": {
               "id": 994,
               "nodeType": "Block",
-              "src": "391:80:3",
+              "src": "486:80:3",
               "statements": [
                 {
                   "expression": {
@@ -162,7 +162,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 974,
-                      "src": "397:5:3",
+                      "src": "492:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -179,7 +179,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 1023,
-                        "src": "405:3:3",
+                        "src": "500:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -193,13 +193,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "405:10:3",
+                      "src": "500:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "397:18:3",
+                    "src": "492:18:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
                       "typeString": "address payable"
@@ -207,7 +207,7 @@
                   },
                   "id": 985,
                   "nodeType": "ExpressionStatement",
-                  "src": "397:18:3"
+                  "src": "492:18:3"
                 },
                 {
                   "expression": {
@@ -224,7 +224,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 976,
-                      "src": "421:10:3",
+                      "src": "516:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -242,7 +242,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "434:2:3",
+                      "src": "529:2:3",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_50_by_1",
@@ -250,7 +250,7 @@
                       },
                       "value": "50"
                     },
-                    "src": "421:15:3",
+                    "src": "516:15:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -258,7 +258,7 @@
                   },
                   "id": 989,
                   "nodeType": "ExpressionStatement",
-                  "src": "421:15:3"
+                  "src": "516:15:3"
                 },
                 {
                   "expression": {
@@ -275,7 +275,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 978,
-                      "src": "442:13:3",
+                      "src": "537:13:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -290,13 +290,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 1025,
-                      "src": "458:3:3",
+                      "src": "553:3:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "442:19:3",
+                    "src": "537:19:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -304,11 +304,11 @@
                   },
                   "id": 993,
                   "nodeType": "ExpressionStatement",
-                  "src": "442:19:3"
+                  "src": "537:19:3"
                 }
               ]
             },
-            "documentation": "@dev The Ownable constructor sets the original `owner` of the contract to the sender\naccount.",
+            "documentation": "@dev The Ownable constructor sets the original `owner` of the contract to the sender account.\nThe toll amount is set as 50 tokens, and the contract start time is set as time of deployment.",
             "id": 995,
             "implemented": true,
             "kind": "constructor",
@@ -319,16 +319,16 @@
               "id": 979,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "381:2:3"
+              "src": "476:2:3"
             },
             "returnParameters": {
               "id": 980,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "391:0:3"
+              "src": "486:0:3"
             },
             "scope": 1008,
-            "src": "370:101:3",
+            "src": "465:101:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -337,7 +337,7 @@
             "body": {
               "id": 1006,
               "nodeType": "Block",
-              "src": "571:86:3",
+              "src": "666:86:3",
               "statements": [
                 {
                   "expression": {
@@ -363,7 +363,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1023,
-                            "src": "585:3:3",
+                            "src": "680:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -377,7 +377,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "585:10:3",
+                          "src": "680:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -392,13 +392,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 974,
-                          "src": "599:5:3",
+                          "src": "694:5:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
                           }
                         },
-                        "src": "585:19:3",
+                        "src": "680:19:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -414,7 +414,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "606:38:3",
+                        "src": "701:38:3",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_754a10a19dbb7023d4f0fe3ac2a2dbc7a48c367695715b1f44a61832de281605",
@@ -442,7 +442,7 @@
                         1027
                       ],
                       "referencedDeclaration": 1027,
-                      "src": "577:7:3",
+                      "src": "672:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -456,7 +456,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "577:68:3",
+                    "src": "672:68:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -464,12 +464,12 @@
                   },
                   "id": 1004,
                   "nodeType": "ExpressionStatement",
-                  "src": "577:68:3"
+                  "src": "672:68:3"
                 },
                 {
                   "id": 1005,
                   "nodeType": "PlaceholderStatement",
-                  "src": "651:1:3"
+                  "src": "746:1:3"
                 }
               ]
             },
@@ -481,20 +481,20 @@
               "id": 996,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "568:2:3"
+              "src": "663:2:3"
             },
-            "src": "550:107:3",
+            "src": "645:107:3",
             "visibility": "internal"
           }
         ],
         "scope": 1009,
-        "src": "156:503:3"
+        "src": "156:598:3"
       }
     ],
-    "src": "0:660:3"
+    "src": "0:755:3"
   },
   "legacyAST": {
-    "absolutePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/feb 28/SmartToll (backup iFrame Dapp tested)/contracts/Ownable.sol",
+    "absolutePath": "/media/snoop/DATA/BlockChain/CED/Exercises Post CED/mar 1/smarttoll/SmartToll/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         1008
@@ -610,7 +610,7 @@
             "body": {
               "id": 994,
               "nodeType": "Block",
-              "src": "391:80:3",
+              "src": "486:80:3",
               "statements": [
                 {
                   "expression": {
@@ -627,7 +627,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 974,
-                      "src": "397:5:3",
+                      "src": "492:5:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
@@ -644,7 +644,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 1023,
-                        "src": "405:3:3",
+                        "src": "500:3:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
@@ -658,13 +658,13 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "405:10:3",
+                      "src": "500:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "397:18:3",
+                    "src": "492:18:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
                       "typeString": "address payable"
@@ -672,7 +672,7 @@
                   },
                   "id": 985,
                   "nodeType": "ExpressionStatement",
-                  "src": "397:18:3"
+                  "src": "492:18:3"
                 },
                 {
                   "expression": {
@@ -689,7 +689,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 976,
-                      "src": "421:10:3",
+                      "src": "516:10:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -707,7 +707,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "434:2:3",
+                      "src": "529:2:3",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_50_by_1",
@@ -715,7 +715,7 @@
                       },
                       "value": "50"
                     },
-                    "src": "421:15:3",
+                    "src": "516:15:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -723,7 +723,7 @@
                   },
                   "id": 989,
                   "nodeType": "ExpressionStatement",
-                  "src": "421:15:3"
+                  "src": "516:15:3"
                 },
                 {
                   "expression": {
@@ -740,7 +740,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 978,
-                      "src": "442:13:3",
+                      "src": "537:13:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -755,13 +755,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 1025,
-                      "src": "458:3:3",
+                      "src": "553:3:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "442:19:3",
+                    "src": "537:19:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -769,11 +769,11 @@
                   },
                   "id": 993,
                   "nodeType": "ExpressionStatement",
-                  "src": "442:19:3"
+                  "src": "537:19:3"
                 }
               ]
             },
-            "documentation": "@dev The Ownable constructor sets the original `owner` of the contract to the sender\naccount.",
+            "documentation": "@dev The Ownable constructor sets the original `owner` of the contract to the sender account.\nThe toll amount is set as 50 tokens, and the contract start time is set as time of deployment.",
             "id": 995,
             "implemented": true,
             "kind": "constructor",
@@ -784,16 +784,16 @@
               "id": 979,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "381:2:3"
+              "src": "476:2:3"
             },
             "returnParameters": {
               "id": 980,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "391:0:3"
+              "src": "486:0:3"
             },
             "scope": 1008,
-            "src": "370:101:3",
+            "src": "465:101:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -802,7 +802,7 @@
             "body": {
               "id": 1006,
               "nodeType": "Block",
-              "src": "571:86:3",
+              "src": "666:86:3",
               "statements": [
                 {
                   "expression": {
@@ -828,7 +828,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1023,
-                            "src": "585:3:3",
+                            "src": "680:3:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -842,7 +842,7 @@
                           "memberName": "sender",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "585:10:3",
+                          "src": "680:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
@@ -857,13 +857,13 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 974,
-                          "src": "599:5:3",
+                          "src": "694:5:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
                           }
                         },
-                        "src": "585:19:3",
+                        "src": "680:19:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -879,7 +879,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "606:38:3",
+                        "src": "701:38:3",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_754a10a19dbb7023d4f0fe3ac2a2dbc7a48c367695715b1f44a61832de281605",
@@ -907,7 +907,7 @@
                         1027
                       ],
                       "referencedDeclaration": 1027,
-                      "src": "577:7:3",
+                      "src": "672:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -921,7 +921,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "577:68:3",
+                    "src": "672:68:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -929,12 +929,12 @@
                   },
                   "id": 1004,
                   "nodeType": "ExpressionStatement",
-                  "src": "577:68:3"
+                  "src": "672:68:3"
                 },
                 {
                   "id": 1005,
                   "nodeType": "PlaceholderStatement",
-                  "src": "651:1:3"
+                  "src": "746:1:3"
                 }
               ]
             },
@@ -946,17 +946,17 @@
               "id": 996,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "568:2:3"
+              "src": "663:2:3"
             },
-            "src": "550:107:3",
+            "src": "645:107:3",
             "visibility": "internal"
           }
         ],
         "scope": 1009,
-        "src": "156:503:3"
+        "src": "156:598:3"
       }
     ],
-    "src": "0:660:3"
+    "src": "0:755:3"
   },
   "compiler": {
     "name": "solc",
@@ -964,12 +964,12 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-02-28T02:34:35.313Z",
+  "updatedAt": "2019-03-02T09:45:43.077Z",
   "devdoc": {
     "details": "The Ownable contract has an owner address, and provides basic authorization control functions.",
     "methods": {
       "constructor": {
-        "details": "The Ownable constructor sets the original `owner` of the contract to the sender account."
+        "details": "The Ownable constructor sets the original `owner` of the contract to the sender account. The toll amount is set as 50 tokens, and the contract start time is set as time of deployment."
       }
     },
     "title": "Ownable"
