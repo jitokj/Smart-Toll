@@ -85,7 +85,7 @@ The Indian Govt. permits the contractor who has won the contract for building hi
 * The contract terminates in 6 minutes, after which, toll payments are not possible. Contractor can still withdraw tokens if contract balance is greater than 0.
 * Only contractor or owner can view Toll History (toll receipts of all payments made).
 
-**Created by
-*Jito K J
-*Anoop E V
-*Lakshmi R
+**Created by**
+Jito K J<br/>
+Anoop E V<br />
+Lakshmi R
