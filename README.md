@@ -84,3 +84,8 @@ The Indian Govt. permits the contractor who has won the contract for building hi
 * Contractor can withdraw tokens only if contract balance is greater than withdrawal limit (80 tokens), so at least two users need to pay toll (toll amount is 50 tokens). Contractor cannot withdraw greater than 80 tokens while contract is live. Once contract has expired, they can withdraw the whole contract balance.
 * The contract terminates in 6 minutes, after which, toll payments are not possible. Contractor can still withdraw tokens if contract balance is greater than 0.
 * Only contractor or owner can view Toll History (toll receipts of all payments made).
+
+Created by
+Jito K J
+Anoop E V
+Lakshmi R
